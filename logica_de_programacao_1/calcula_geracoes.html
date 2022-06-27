@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+
+<script>
+      
+    function pulaLinha(){
+        document.write("<br>");    
+    };
+
+    function mostra(texto){
+        document.write(texto);
+        pulaLinha();
+    }
+
+    var anoInicial = 1500;
+    var anoAtual = 2022;
+    var tempoGeracoes = 28;
+    var anosPassados = anoAtual - anoInicial;
+    var geracoes = Math.round((anosPassados/tempoGeracoes));
+        
+    mostra("Desde: " + anoInicial);
+    mostra("Até: " + anoAtual);
+    mostra("Se passaram " + geracoes + " gerações.");
+</script>

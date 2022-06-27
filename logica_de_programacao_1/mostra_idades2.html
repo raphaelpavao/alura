@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+
+<script>
+      
+    function pulaLinha(){
+        document.write("<br><hr><br>");    
+    };
+
+    function mostra(texto){
+        document.write("<big>" + texto + "</big>");
+        pulaLinha();
+    }
+
+    var anoAtual = 2022;
+    var idadeA = 25;
+    var idadeB = 30;
+    var idadeC = 35;
+    var nascimentoA = anoAtual - idadeA;
+    var nascimentoB = anoAtual - idadeB;
+    var nascimentoC = anoAtual - idadeC;
+        
+    mostra("Pessoa A nasceu em: " + nascimentoA + ".");
+    mostra("Pessoa B nasceu em: " + nascimentoB + ".");
+    mostra("Pessoa C nasceu em: " + nascimentoC + ".");
+</script>

@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+
+<script>
+    alert("Estrutura básica");
+    
+    function pulaLinha(){
+        document.write("<br>");    
+    };
+
+    function mostra(texto){
+        document.write(texto);
+        pulaLinha();
+    }
+
+    var ano = 2016;
+    var ano_nascimento = 1980;
+    var idade = ano-ano_nascimento;
+    
+    mostra("Minha idade é: ");
+    mostra(idade);
+    pulaLinha();
+    document.write("Teste de arredondamento 11/3 = " + Math.round(11/3));
+</script>

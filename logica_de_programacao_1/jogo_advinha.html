@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+
+<script>
+      
+    function pulaLinha(){
+        document.write("<br>");    
+    };
+
+    function mostra(texto){
+        document.write(texto);
+        pulaLinha();
+    };
+
+    var numeroPensado = Math.round(Math.random()*10);
+    var numeroChutado = parseInt(prompt("Advinhe qual é o número pensado de 1 a 10: "));
+
+    if(numeroPensado == numeroChutado){
+        mostra("Você acertou. O número pensado é:  " + numeroPensado)
+    }else{
+        mostra("Você errou. Você chutou " + numeroChutado + ", mas o número pensado é:  " + numeroPensado)
+    };
+    mostra("Fim do programa");
+
+</script>

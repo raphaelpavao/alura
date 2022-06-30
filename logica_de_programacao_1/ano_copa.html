@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+
+<script>
+      
+    function pulaLinha(){
+        document.write("<br>");    
+    };
+
+    function mostra(texto){
+        document.write(texto);
+        pulaLinha();
+    };
+
+    var tempoEntreCopas = 4;
+    var anoCopa = parseInt(prompt("Digite o ano da primeira copa:"));
+    var calcularAte = parseInt(prompt("Digite até qual ano calcular: "));
+
+    
+    while(anoCopa <= calcularAte){
+        mostra("Teve copa em " + anoCopa);
+        anoCopa = anoCopa + 4;
+    }
+
+
+    mostra("Fim do programa");
+
+</script>

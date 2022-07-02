@@ -30,29 +30,19 @@ let pontos2 = 0;
 //Variáveis de som
 let raquetada;
 let ponto;
-let trilha;
-
-raquetada = new Howl({
-  src: ['raquetada.mp3'],
-  volume: 0.8
-});
-
-ponto = new Howl({
-  src: ['ponto.mp3'],
-  volume: 0.8
-});
-
-
-
-/*function preload(){
-  trilha = loadSound("trilha.mp3");
-  ponto = loadSound("ponto.mp3");
-  raquetada = loadSound("raquetada.mp3");
-}*/
 
 function setup() {
-  createCanvas(600, 400);  
-  //trilha.loop();
+  createCanvas(600, 400); 
+
+  raquetada = new Howl({
+    src: ['raquetada.mp3'],
+    volume: 0.8
+  });
+  
+  ponto = new Howl({
+    src: ['ponto.mp3'],
+    volume: 0.8
+  });
 };
 
 function draw() {  
@@ -70,15 +60,13 @@ function draw() {
   marcaPonto();
 };
 
-////////////////////
-
 function mostraBolinha(){
   circle(xBolinha,yBolinha,dBolinha);
 };
 
 function mostraRaquete(x,y){
   rect(x,y,raqueteComprimento,raqueteAltura);
-}
+};
 
 function movimentaBolinha(){
   xBolinha = xBolinha + velocidadeXBolinha;
@@ -92,7 +80,7 @@ function movimentaRaquete1(){
   if(keyIsDown(DOWN_ARROW)){
     yRaquete = yRaquete + 10;
   }
-}
+};
 
 function movimentaRaquete2(){
   velocidadeY2 = yBolinha - yRaquete2 - raqueteComprimento/2 - 40;
@@ -117,8 +105,8 @@ function verificaColisaoRaquete(xRaquete,yRaquete){
   if(colidiu){
     raquetada.play();
     velocidadeXBolinha *=  -1;
-    chanceErro = numeroAleatorio(1,15)
-  }
+    chanceErro = numeroAleatorio(1,15);
+  };
 };
 
 function incluiPlacar(pontos,x,y){
@@ -137,15 +125,15 @@ function marcaPonto(){
   if(xBolinha < raio){
     pontos2++;
     ponto.play();
-  }
+  };
   if(xBolinha > width-raio){
     pontos1++;
     ponto.play();
-  }
-}
+  };
+};
 
 function numeroAleatorio(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
-}
+};

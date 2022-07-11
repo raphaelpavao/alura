@@ -1,0 +1,85 @@
+<html>
+    <meta charset="UTF-8">
+    <script>
+        /*
+        Você deve criar um programa em Javascript que perguntará se você deseja adicionar uma comida na sua lista de compras, 
+        e você deve poder responder com sim ou não.
+
+        Em seguida, ele perguntará qual comida você deseja inserir, e você digitará o nome dela, como por exemplo batata.
+
+        Depois, ele deverá perguntar em qual categoria essa comida se encaixa, com algumas opções já pré-definidas, 
+        como frutas, laticínios, congelados, doces e o que mais você achar interessante. Assim, você poderá separar tudo no seu devido grupo.
+        */
+
+        function pulaLinha(){
+            document.write("<br>");    
+        };
+
+        function mostra(texto){
+            document.write(texto);
+        };
+
+        function coletaDados(){
+            while(novaAdicao == 1){            
+                novaAdicao = (prompt("Deseja adicionar um novo ítem?(Digite 1 para sim ou qualquer outra tecla para não)"));
+                if(novaAdicao == 1){
+                    novoItem = (prompt("Digite o nome do novo item"));
+                    categoria = (prompt("Escolha a categoria: \n 1 - Frutas \n 2 - Laticínios \n 3 - Congelados \n Outro valor descarta o item"));
+                    switch (categoria){
+                        case '1':
+                            alert("Produto adicionado a lista de FRUTAS.");
+                            frutas.push(novoItem);
+                        break;     
+                        case '2':
+                            alert("Produto adicionado a lista de LATICÍNIOS.");
+                            laticinios.push(novoItem);
+                        break;
+                        case '3':
+                            alert("Produto adicionado a lista de CONGELADOS.");
+                            congelados.push(novoItem);
+                        break;
+                        default:
+                            alert("Item DESCARTADO.");
+                        break;
+                    }
+                }else{
+                    alert("Lista Finalizada");
+                };
+            }
+        }
+
+        function varreArray(array){
+            for(i=0;i<array.length;i++){
+                mostra("--->"+array[i]);
+                pulaLinha();
+            }
+        }
+
+        let frutas = [];
+        let laticinios = [];
+        let congelados = [];
+        let novaAdicao = 1;
+        let categoria = 0;
+        let i = 0;
+
+        coletaDados();
+        mostra("Sua lista de compras:");        
+        pulaLinha();
+        pulaLinha();
+        
+        mostra("Frutas:");
+        pulaLinha();    
+        varreArray(frutas)
+        pulaLinha();
+
+        mostra("Laticínios:");
+        pulaLinha();
+        varreArray(laticinios);
+        pulaLinha();
+
+        mostra("Congelados:");
+        pulaLinha();
+        varreArray(congelados);
+        pulaLinha();
+    </script>
+</html> 

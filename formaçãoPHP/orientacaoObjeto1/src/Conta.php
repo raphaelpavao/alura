@@ -6,6 +6,7 @@
         private float  $saldo;
         private static $numeroDeContas = 0;
 
+
         //Métodos
         //Construtor
         public function __construct(Titular $titular){
@@ -50,6 +51,22 @@
         //Acessos
         public function recuperarCpf() : string{
             return $this->titular->recuperarCpf();
+        }
+
+        public function recuperarCidade() : string{
+            return $this->titular->recuperarCidade();
+        }
+
+        public function recuperarBairro() : string{
+            return $this->titular->recuperarBairro();
+        }
+
+        public function recuperarRua() : string{
+            return $this->titular->recuperarRua();
+        }
+
+        public function recuperarNumero() : string{
+            return $this->titular->recuperarNumero();
         }
 
         public function recuperarNome() : string{

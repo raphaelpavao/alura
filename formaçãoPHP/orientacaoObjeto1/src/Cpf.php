@@ -15,7 +15,7 @@
         }
 
         //Acessos
-        function recuperarCpf(){
+        public function recuperarCpf():string{
             return $this->cpf;
         }
 

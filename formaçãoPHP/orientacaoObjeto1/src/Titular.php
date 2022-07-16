@@ -1,17 +1,17 @@
 <?php
-    class Titular
+    class Titular extends Pessoa
     {
         //Atributos
-        private Cpf $cpf;
-        private string $nome;       
+        private Endereco $endereco;     
                 
         //Métodos
         //Construtor
-        public function __construct(Cpf $cpfTitular, string $nomeTitular,){
+        public function __construct(Cpf $cpfTitular, string $nomeTitular, Endereco $endereco){
             $this->validarNome($nomeTitular);
             $this->cpf = $cpfTitular;
             $this->nome = $nomeTitular;
-        }
+            $this->endereco = $endereco;
+        }        
 
         //Destrutor
         public function __destruct(){
@@ -19,13 +19,22 @@
         }
 
         //Acessos
-        function recuperarCpf(){
-            return $this->cpf->recuperarCpf();
+        function recuperarCidade():string{
+            return $this->endereco->recuperarCidade();
         }
 
-        function recuperarNome(){
-            return $this->nome;
+        function recuperarBairro():string{
+            return $this->endereco->recuperarBairro();
         }
+
+        function recuperarRua():string{
+            return $this->endereco->recuperarRua();
+        }
+
+        function recuperarNumero():string{
+            return $this->endereco->recuperarNumero();
+        }    
+
 
         //Atribuidores
 
